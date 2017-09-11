@@ -72,6 +72,7 @@ function playGame() {
 	}
 }
 
+//Calling function to play the game 3 times
 playGame();
 
 
