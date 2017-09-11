@@ -54,9 +54,9 @@ while (count < 4) {
 	var playerOneChoice = playerInput();
 	var playerTwoChoice = randomChoice();
 	calculatingScore(playerOneChoice, playerTwoChoice);
-	count++;
 	alert('Player 1 score: ' + playerOneScore);
 	alert('Player 2 score: ' + playerTwoScore);
+	count++;
 }
 
 if (playerOneScore > playerTwoScore) {
