@@ -1,11 +1,14 @@
+//Initialises player score variables
 var playerOneScore = 0;
 var playerTwoScore = 0;
 
+//Function for player 1 to input choice
 function playerInput() {
 	var input = prompt('Enter r(ock), p(aper) or s(cissors)');
 	return input;
 }
 
+//Function for calculating the score
 function calculatingScore(oneChoice, twoChoice) {
 	if (oneChoice === 'r') {
 		if (twoChoice === 's') {
@@ -37,6 +40,7 @@ function calculatingScore(oneChoice, twoChoice) {
 	}
 }
 
+//Function for generating a random choice for Player 2
 function randomChoice() {
 	var rand = Math.floor(Math.random() * 3);
 	if (rand === 0) {
@@ -48,22 +52,29 @@ function randomChoice() {
 	}
 }
 
-var count = 1;
+//Function which allows the game to be played 3 times and displays scores and the winner
+function playGame() {
+	var count = 1;
 
-while (count < 4) {
-	var playerOneChoice = playerInput();
-	var playerTwoChoice = randomChoice();
-	calculatingScore(playerOneChoice, playerTwoChoice);
-	alert('Player 1 score: ' + playerOneScore);
-	alert('Player 2 score: ' + playerTwoScore);
-	count++;
+	while (count < 4) {
+		var playerOneChoice = playerInput();
+		var playerTwoChoice = randomChoice();
+		calculatingScore(playerOneChoice, playerTwoChoice);
+		alert('Player 1 score: ' + playerOneScore);
+		alert('Player 2 score: ' + playerTwoScore);
+		count++;
+	}
+
+	if (playerOneScore > playerTwoScore) {
+		alert('Player 1 wins');
+	} else {
+		alert('Player 2 wins');
+	}
 }
 
-if (playerOneScore > playerTwoScore) {
-	alert('Player 1 wins');
-} else {
-	alert('Player 2 wins');
-}
+playGame();
+
+
 
 
 
